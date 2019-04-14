@@ -85,3 +85,57 @@ class myStack{
 				tmp=tmp->next;
 			}}}};
 
+int nama_menu();
+
+int main(){
+	myStack obj;
+	int menu,val;
+	obj.setawal();
+	do{
+		menu = nama_menu();
+		switch(menu){
+			case 1:
+					cout << "Input Angka yang ingin dipush: ";cin>>val;
+					obj.push(val);
+					break;
+			case 2:
+					if(obj.isEmpty()){
+						cout << "stack empty" << endl;
+					}else{
+						cout << "Angka ";obj.getTop(); 
+						cout << "akan dihapus";obj.pop();
+					}
+					break;
+			case 3:
+					if(obj.isEmpty()){
+						cout << "stack empty" << endl;
+					}else{
+						cout << "Elemen Paling Atas adalah ";obj.getTop();
+					}
+					break;
+			case 4:
+					obj.print();
+					break;
+			case 5:
+					exit(0);
+			default:
+					cout <<"\t\nPilihan tidak ada";
+					break;
+		}
+		system("clear");
+	}while (menu != 5);
+		
+		return 0;
+}
+
+int nama_menu(){
+	cout<<"\n-----------------------------------------------------------";
+    cout<<"\n\t\tSTACK USING LINKED LIST\n\n";
+	int menu;
+	cout<<"1:PUSH\n2:POP\n3:PEEK\n4:DISPLAY STACK\n5:EXIT";
+    cout<<"\nPILIH: ";
+    cin>>menu;
+	
+	system("clear");
+	return menu;
+}
