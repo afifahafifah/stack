@@ -2,3 +2,26 @@
 #define MAX_STACK_SIZE 10
 
 using namespace std;
+
+struct Element{
+	int data, top;
+	Element *next;
+};
+	
+	Element stack;
+	Element *head = NULL;
+  
+class myStack{
+	public:
+	void setawal(){
+		stack.top = 9;
+	}
+	
+	bool isEmpty(){
+        if(stack.top == 9){
+			return 1;
+		   }else{
+			return 0;
+		}
+  }
+  
