@@ -23,5 +23,53 @@ class myStack{
 		   }else{
 			return 0;
 		}
-  }
-  
+         }
+  	bool isFull(){
+        if(stack.top == 9){
+			return 1;
+		}else{
+			return 0;
+		}
+         }
+    
+    void push(int input){
+		if(isFull()){
+			cout << "stack full";
+		}else{
+			Element *tmp = new Element;
+			tmp->data = input;
+			tmp->next=NULL;
+			if(isEmpty())
+			{
+				head=tmp;
+				head->next=NULL;
+			}else{
+				tmp->next=head;
+				head=tmp;
+			}
+			cout<<"Push berhasil \n";
+			stack.top++;
+		}
+	}
+	
+	void pop(){
+		if (isEmpty()){
+			cout<<"\nstack empty\n";
+		}else{
+			Element *tmp = new Element;
+			tmp = head;
+			head = head->next;
+			delete tmp;
+			cout<<"\nPop Berhasil\n";
+			stack.top--;
+		}	
+	}
+		
+	void getTop(){
+		if(isEmpty()){
+			cout << "stuck empty";
+		}else{
+			cout << head->data;
+		}
+	}
+
